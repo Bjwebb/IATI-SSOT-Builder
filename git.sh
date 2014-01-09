@@ -1,3 +1,6 @@
+# This script was created by Ben Webb, and is released under CC0
+# http://creativecommons.org/publicdomain/zero/1.0/
+
 function function_to_fork {
     echo "$1" >> test
     ref=`echo $1 | awk -F ',' '{ print $1 }'`
