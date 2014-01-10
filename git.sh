@@ -2,7 +2,6 @@
 # http://creativecommons.org/publicdomain/zero/1.0/
 
 function function_to_fork {
-    echo "$1" >> test
     ref=`echo $1 | awk -F ',' '{ print $1 }'`
     after=`echo $1 | awk -F ',' '{ print $2 }'`
     before=`echo $1 | awk -F ',' '{ print $3 }'`
