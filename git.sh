@@ -14,12 +14,12 @@ function function_to_fork {
         cd "build/$repo_name/$after" || exit 1
         git clone https://github.com/IATI/IATI-Standard-SSOT.git
         cd IATI-Standard-SSOT || exit 1
-        if [ "$repo_name"="IATI-Standard-SSOT" ]; then
+        if [ "$repo_name" = "IATI-Standard-SSOT" ]; then
             git checkout $after
         fi
         git submodule init
         git submodule update
-        if [ "$repo_name"!="IATI-Standard-SSOT" ]; then
+        if [ "$repo_name" != "IATI-Standard-SSOT" ]; then
             cd $repo_name || exit 1
             git checkout $after
             cd .. || exit 1
