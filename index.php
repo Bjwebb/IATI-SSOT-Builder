@@ -8,6 +8,7 @@
     <th>Preview</th>
     <th>Commit</th>
     <th>Author</th>
+    <th>Timestamp</th>
 </thead>
 <?php
 
@@ -23,6 +24,7 @@ foreach ($lines as $line) {
     <td><a href="commit/<?php echo $j->repository->name .'/'. $j->head_commit->id; ?>/en/">HTML</a></td>
     <td><?php echo $j->head_commit->message; ?></td>
     <td><?php echo $j->head_commit->author->name; ?></td>
+    <td><?php echo $j->head_commit->timestamp; ?></td>
 </tr>
     <?php
 
