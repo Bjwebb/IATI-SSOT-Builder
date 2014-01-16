@@ -15,12 +15,13 @@ $lines = explode("\n", file_get_contents('log'));
 $lines = array_reverse($lines);
 
 foreach ($lines as $line) {
+    if ($line=='') continue;
     list($ref,$after,$before,$repo_name) = explode(",",$line);
     $j = json_decode(file_get_contents("json/$after.json"));
     ?>
 <tr>
     <td><?php echo $j->repository->name; ?></td>
-    <td><a href="commit/<?php echo $j->repository->name .'/'. $j->head_commit->id; ?>/en/">HTML</a></td>
+    <td><a href="commit/<?php echo $j->repository->name .'/'. $j->head_commit->id; ?>/en/index.html">HTML</a></td>
     <td><?php echo $j->head_commit->message; ?></td>
     <td><?php echo $j->head_commit->author->name; ?></td>
 </tr>
