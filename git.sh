@@ -24,8 +24,8 @@ function function_to_fork {
             git checkout $after
             cd .. || exit 1
         fi
-        curl "https://gist.github.com/Bjwebb/405e5e0e9a0fac5f3a67/raw/layout.html" > IATI-Extra-Documentation/en/_templates/layout.html
-        curl "https://gist.github.com/Bjwebb/405e5e0e9a0fac5f3a67/raw/layout.html" > IATI-Extra-Documentation/fr/_templates/layout.html
+        curl -L "https://gist.github.com/Bjwebb/405e5e0e9a0fac5f3a67/raw/layout.html" > IATI-Extra-Documentation/en/_templates/layout.html
+        curl -L "https://gist.github.com/Bjwebb/405e5e0e9a0fac5f3a67/raw/layout.html" > IATI-Extra-Documentation/fr/_templates/layout.html
         ./gen.sh
         mv docs/en/_build/html "../../../../commit/$repo_name/$after/en"
         mv docs/fr/_build/html "../../../../commit/$repo_name/$after/fr"

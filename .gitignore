@@ -1,4 +1,7 @@
 *.swp
+pyenv
+
+secret.php
 build
 commit
 json
